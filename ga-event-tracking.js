@@ -32,6 +32,21 @@
         <a href="#" data-ga-focus="compose main textarea">Anchor tag</a>
         */
 
+        function live(eventType, elementId, cb){
+            document.addEventListener(eventType, function (event) {
+                var el = event.target, 
+                    found;
+
+                while (el && !(found = el.id === elementId)) {
+                    el = el.parentElement;
+                }
+
+                if (found) {
+                    cb.call(el, event);
+                }
+            });
+        } 
+
         function addListeners(elements, eventType){
             var events = eventType.replace(/\s+/g, '').split(',');
             for(var a = 0; a < elements.length; a++){
