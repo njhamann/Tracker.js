@@ -28,8 +28,29 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h3>A new way to tack everything!</h3>
+<h3>Usage</h4>
+
+<pre><code id="code"><a href="#" 
+    data-ga-track 
+    data-ga-category="publish" 
+    data-ga-action="click" 
+    data-ga-label="compose" 
+    data-ga-value="22" 
+    data-ga-non-interaction="true">Anchor tag</a>
+
+<a href="#" 
+    data-ga-click="compose button" 
+    data-ga-category="publish" 
+    data-ga-action="click" 
+    data-ga-label="compose button overwrite label" 
+    data-ga-value="22" 
+    data-ga-non-interaction="true">Anchor tag</a>
+
+<a href="#" data-ga-click="compose button">Anchor tag</a>
+<a href="#" data-ga-focus="compose main textarea">Anchor tag</a>
+</code></pre>
+<!--
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
@@ -76,6 +97,7 @@
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+    -->
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/njhamann">njhamann</a></p>
@@ -83,6 +105,11 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+    <script>
+        String.prototype.escapeHTML = function () {                                        
+            return this.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;')
+        };
+        document.getElementById('code').innerHTML = document.getElementById('code').innerHTML.escapeHTML();
+    </script>
   </body>
 </html>
