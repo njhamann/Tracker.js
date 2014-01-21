@@ -5,11 +5,19 @@
 </head>
 <body>
     <h3>Google Analytics Event Tracking Example</h3>
-    <div class="element1">
-        <div class="element2">
+    <div class="element1" id="testing_live">
+        <div class="element2" id="link_container">
             <a href="#" data-ga-click="tracking event blah">Click to track</a>
+            <a href="#" id="add_link_to_track"><span>Add new link</span></a>
         </div>
     </div>
+    <script>
+        var addLinkEl = document.getElementById('add_link_to_track'),
+            linkContainerEl = document.getElementById('link_container');
+        addLinkEl.addEventListener('click', function(){
+            linkContainerEl.innerHTML = linkContainerEl.innerHTML + '<a href="#" data-ga-click="compose button click"><span>Testing live binding</span></a>';
+        });
+    </script>
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-XXXXX-X']);
@@ -21,6 +29,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <script type="text/javascript" src="../ga-event-tracking.js"></script>
+    <script type="text/javascript" src="../src/sizzle.js"></script>
+    <script type="text/javascript" src="../src/ga-event-tracking.js"></script>
 </body>
 </html>
