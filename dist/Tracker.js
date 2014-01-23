@@ -2023,6 +2023,7 @@ if ( typeof define === "function" && define.amd ) {
  * to do: 
  * - create a white list function for
  *   free-for-all event tracking
+ * - set default category to current path
  */
 
 (function(){
@@ -2056,13 +2057,13 @@ if ( typeof define === "function" && define.amd ) {
         function pushEvent(e){
             e.preventDefault();
             var elm = this,
-                gaCategory = elm.getAttribute('data-ga-category') || 'app',
+                gaCategory = elm.getAttribute('data-ga-category') || window.location.pathname || null,
                 gaAction = elm.getAttribute('data-ga-action') || e.type || null,
                 gaLabel = elm.getAttribute('data-ga-label') || elm.getAttribute('data-ga-click') || elm.innerHTML.replace(/<[^>]*>/g, ""),
                 gaValue = parseInt(elm.getAttribute('data-ga-value'), 10) || null,
                 gaNonInteraction = elm.getAttribute('data-ga-non-interaction') == 'true';
             
-            if(_gaq && gaAction && gaLabel){
+            if(_gaq && gaCategory && gaAction && gaLabel){
                 _gaq.push(['_trackEvent', gaCategory, gaAction, gaLabel, gaValue, gaNonInteraction]);
             }
         }

@@ -26,3 +26,13 @@ Google Analytics event tracking
     data-ga-value="22"                                          
     data-ga-non-interaction="true">Anchor tag</a>               
 ```
+
+Supported browsers
+------------------
+
+* Google Chrome (including mobile)
+* Firefox
+* Safari (including mobile)
+* IE 9+
+
+Support for older browsers coming soon
