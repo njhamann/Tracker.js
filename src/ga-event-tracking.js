@@ -86,6 +86,7 @@
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', uaid]);
             _gaq.push(['_trackPageview']);
+            window._gaq = _gaq;
 
             (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -93,6 +94,7 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
             
+
             this.addGAScript = function(){
                 return _gaq;
             };
@@ -100,7 +102,7 @@
 
         return {
             addGAScript: addGAScript,
-            addTracking: addTracking
+            addGlobalElements: addGlobalElements
         };
 
     })();

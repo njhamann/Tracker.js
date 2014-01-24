@@ -2074,15 +2074,16 @@ if ( typeof define === "function" && define.amd ) {
         addListeners('[data-ga-blur]', 'blur');
         
         //public
-        var addTracking = function(tracking){
+        var addGlobalElements = function(tracking){
             /**
              * whitelisting
              * GAEventTracking.addTracking(selector, options);
-             * GAEventTracking.addTracking('a, button', {
+             * GAEventTracking.addTracking({
+             *     selector:        'a, button',
              *     events:          'click, focus, blur',
              *     category:        'cat',
              *     action:          'click',
-             *     label:           'cool clikc',
+             *     label:           'label that will be applied to all',
              *     value:           20,
              *     non_interaction: true
              * });
@@ -2090,8 +2091,33 @@ if ( typeof define === "function" && define.amd ) {
             
         };
 
+        var addGAScript = function(uaid){
+            /**
+             * Tracking Basics (Asynchronous Syntax)
+             * https://developers.google.com/analytics/devguides/collection/gajs/
+             * Must be called manually, will not run by default
+             */
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', uaid]);
+            _gaq.push(['_trackPageview']);
+            window._gaq = _gaq;
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+            
+
+            this.addGAScript = function(){
+                return _gaq;
+            };
+        };
+
         return {
-            addTracking: addTracking
+            addGAScript: addGAScript,
+            addGlobalElements: addGlobalElements
         };
 
     })();
