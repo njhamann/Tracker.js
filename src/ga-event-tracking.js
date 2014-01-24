@@ -73,7 +73,6 @@
              *     non_interaction: true
              * });
              */
-            
         };
 
         var addGAScript = function(uaid){
@@ -81,6 +80,8 @@
              * Tracking Basics (Asynchronous Syntax)
              * https://developers.google.com/analytics/devguides/collection/gajs/
              * Must be called manually, will not run by default
+             * Should only be used if google analytics have not been
+             * added to the page
              */
 
             var _gaq = _gaq || [];

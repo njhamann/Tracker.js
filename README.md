@@ -1,8 +1,20 @@
 # Tracker.js
 Google Analytics event tracking
 
+
 ### How to use
 
+#### Without Google Analytics installed
+If you don't have Google Analytics installed, we provide a convenience method to add it to the page.
+
+```html
+<script type="text/javascript" src="/js/Tracker.min.js"></script>
+<script>
+    GAEventTracking.addGAScript('UA-XXXXX-X');
+</script>
+```
+
+#### With Google Analytics installed
 ```html
 <!-- simple usage -->
 <a href="#" data-ga-track>Anchor tag</a>       
@@ -26,6 +38,8 @@ Google Analytics event tracking
     data-ga-label="compose button overwrite label"              
     data-ga-value="22"                                          
     data-ga-non-interaction="true">Anchor tag</a>               
+
+<script type="text/javascript" src="/js/Tracker.min.js"></script>
 ```
 
 ### Supported browsers
