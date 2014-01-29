@@ -21,6 +21,7 @@
                     found;
                 
                 while (el) {
+                     if(el.nodeName == '#document') break;
                     found = Sizzle.matchesSelector(el, selector);
                     if(found) break;
                     el = el.parentElement;
