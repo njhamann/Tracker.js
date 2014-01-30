@@ -1,0 +1,10 @@
+{
+  "name": "Tracker.js",
+  "version": "0.1.0",
+  "main": "dist/Tracker.min.js"
+  "keywords": [
+    "google",
+    "analytics",
+    "event tracking"
+  ]
+}
