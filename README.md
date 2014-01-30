@@ -4,8 +4,8 @@ Google Analytics event tracking
 
 ### How to use
 
-#### Without Google Analytics installed
-If you don't have Google Analytics installed, we provide a convenience method to add it to the page.
+#### First include Tracker.js
+If you don't have Google Analytics already installed, Tracker.js provides a convenience method to add it to the page.
 
 ```html
 <script type="text/javascript" src="/js/Tracker.min.js"></script>
@@ -14,19 +14,19 @@ If you don't have Google Analytics installed, we provide a convenience method to
 </script>
 ```
 
-#### With Google Analytics installed
+#### Start adding tracking attributes
 ```html
 <!-- simple usage -->
 <a href="#" data-ga-track>Anchor tag</a>       
 
 <!-- preferred usage -->
-<a href="#" data-ga-focus="compose main textarea">Anchor tag</a>
+<a href="#" data-ga-click="compose main textarea">Anchor tag</a>
 
 <!-- complex usage -->
 <a href="#"
     data-ga-track                                               
     data-ga-category="publish"                                  
-    data-ga-action="click"                                      
+    data-ga-action="click"                                   
     data-ga-label="compose"                                     
     data-ga-value="22"                                          
     data-ga-non-interaction="true">Anchor tag</a>               
@@ -34,12 +34,10 @@ If you don't have Google Analytics installed, we provide a convenience method to
 <a href="#"                                                     
     data-ga-click="compose button"                              
     data-ga-category="publish"                                  
-    data-ga-action="click"                                      
+    data-ga-action="click"
     data-ga-label="compose button overwrite label"              
     data-ga-value="22"                                          
     data-ga-non-interaction="true">Anchor tag</a>               
-
-<script type="text/javascript" src="/js/Tracker.min.js"></script>
 ```
 
 ### Supported browsers
