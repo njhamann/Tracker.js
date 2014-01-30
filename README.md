@@ -4,7 +4,7 @@ Google Analytics event tracking
 
 ### How to use
 
-#### First include Tracker.js
+#### Include Tracker.js
 If you don't have Google Analytics already installed, Tracker.js provides a convenience method to add it to the page.
 
 ```html
@@ -14,7 +14,7 @@ If you don't have Google Analytics already installed, Tracker.js provides a conv
 </script>
 ```
 
-#### Start adding tracking attributes
+#### Add tracking attributes
 ```html
 <!-- simple usage -->
 <a href="#" data-ga-track>Anchor tag</a>       
@@ -33,9 +33,9 @@ If you don't have Google Analytics already installed, Tracker.js provides a conv
                                                                     
 <a href="#"                                                     
     data-ga-click="compose button"                              
-    data-ga-category="publish"                                  
+    data-ga-category="publish"    
     data-ga-action="click"
-    data-ga-label="compose button overwrite label"              
+    data-ga-label="this will overwrite data-ga-click's value"              
     data-ga-value="22"                                          
     data-ga-non-interaction="true">Anchor tag</a>               
 ```
