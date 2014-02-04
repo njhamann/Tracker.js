@@ -2064,7 +2064,7 @@ if ( typeof define === "function" && define.amd ) {
                 gaValue = parseInt(elm.getAttribute('data-ga-value'), 10) || null,
                 gaNonInteraction = elm.getAttribute('data-ga-non-interaction') == 'true';
             
-            if(_gaq && gaCategory && gaAction && gaLabel){
+            if(typeof _gaq != 'undefined' && gaCategory && gaAction && gaLabel){
                 _gaq.push(['_trackEvent', gaCategory, gaAction, gaLabel, gaValue, gaNonInteraction]);
             }
         }
