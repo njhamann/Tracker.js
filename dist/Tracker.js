@@ -2056,7 +2056,6 @@ if ( typeof define === "function" && define.amd ) {
         }
 
         function pushEvent(e){
-            e.preventDefault();
             var elm = this,
                 gaCategory = elm.getAttribute('data-ga-category') || window.location.pathname || null,
                 gaAction = elm.getAttribute('data-ga-action') || e.type || null,
